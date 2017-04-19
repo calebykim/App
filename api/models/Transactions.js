@@ -1,33 +1,29 @@
 /**
- * Adults.js
+ * Transactions.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
+
   attributes: {
     id: {
       type: 'integer',
       autoIncrement: true,
       primaryKey: true
     },
-    family_id:{
-      type: 'integer',
-      autoIncrement: true
-    },
-    email:{
-      type: 'string',
-      unique: true
-    },
-    password:{
-      type: 'string'
-    },
-    savings_balance:{
+    amount:{
       type: 'float'
     },
-    checking_balance:{
-      type: 'float'
+    sender_id:{
+      type: 'integer'
+    },
+    recipient_id:{
+      type: 'integer'
+    },
+    created_at:{
+      type: 'datetime'
     }
   }
 };
