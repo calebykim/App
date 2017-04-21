@@ -26,9 +26,9 @@ module.exports.routes = {
 /**
 * ADULT ROUTES
 */
-  'GET /adultHome': {view: 'home/adult'},
+  'GET /adultHome': {view: 'adults/homepage'},
 /**
 * KID ROUTES
 */
-  'GET /kidHome': {view: 'home/kid'}
+  'GET /kidHome': {view: 'kids/homepage'}
 };
