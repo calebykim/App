@@ -6,6 +6,26 @@
  */
 
 module.exports = {
-	
-};
 
+  show: function (req, res) {
+    var kid = Kid.findOne({id: req.params.id });
+
+    res.view('kids/show');
+  },
+
+  edit: function (req, res) {
+    var kid = Kid.findOne({id: req.params.id });
+
+    res.view('kids/edit');
+  },
+
+  update: function(req, res) {
+    var kid = Kid.findOne({id: req.params.id });
+
+  },
+
+  destroy: function(req, res) {
+
+  }
+
+};

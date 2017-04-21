@@ -1,12 +1,10 @@
 /**
  * Adult.js
- *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
-module.exports = {
+var bcrypt = require('bcrypt');
 
+module.exports = {
   attributes: {
     id: {
       type: 'integer',
@@ -21,7 +19,7 @@ module.exports = {
       type: 'string',
       unique: true
     },
-    password:{
+    encryptedPassword:{
       type: 'string'
     },
     savings_balance:{
@@ -30,6 +28,15 @@ module.exports = {
     checking_balance:{
       type: 'float'
     }
+  },
 
+  beforeCreate: function(params, next) {
+    bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
+      if (err) return next(err);
+
+      params.encryptedPassword = encryptedPassword;
+
+      next();
+    });
   }
 };

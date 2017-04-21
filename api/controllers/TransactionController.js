@@ -6,6 +6,17 @@
  */
 
 module.exports = {
-	
-};
+	new: function (req, res) {
 
+    res.view('transactions/new');
+  },
+
+  create: function (req, res) {
+
+  },
+
+  show: function (req, res) {
+
+  }
+
+};

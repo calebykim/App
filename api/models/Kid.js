@@ -6,7 +6,6 @@
  */
 
 module.exports = {
-
   attributes: {
     id: {
       type: 'integer',
@@ -20,7 +19,7 @@ module.exports = {
     email:{
       type: 'string'
     },
-    password:{
+    encryptedPassword:{
       type: 'string'
     },
     savings_balance:{
@@ -29,5 +28,15 @@ module.exports = {
     checking_balance:{
       type: 'float'
     }
+  },
+
+  beforeCreate: function(params, next) {
+    bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
+      if (err) return next(err);
+
+      params.encryptedPassword = encryptedPassword;
+
+      next();
+    });
   }
 };
