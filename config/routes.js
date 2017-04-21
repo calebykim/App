@@ -36,21 +36,21 @@ module.exports.routes = {
 * REST routes
 */
   // adults
-  'GET /adults/:id': { AdultController.show },
-  'GET /adults/:id/edit': { AdultController.edit },
-  'PUT /adults/:id': { AdultController.update },
+  'GET /adults/:id': 'AdultController.show',
+  'GET /adults/:id/edit': 'AdultController.edit',
+  'PUT /adults/:id': 'AdultController.update',
   // kids
-  'GET /kids/:id': { KidController.show },
-  'GET /kids/:id/edit': { KidController.edit },
-  'PUT /kids/:id': { KidController.update },
+  'GET /kids/:id': 'KidController.show',
+  'GET /kids/:id/edit': 'KidController.edit',
+  'PUT /kids/:id': 'KidController.update',
   // families
-  'GET /families/:id': { FamilyController.show },
-  'GET /families/:id/edit': { FamilyController.edit },
-  'POST /famlies': { FamilyController.create },
-  'PUT /families/:id': { FamilyController.update },
+  'GET /families/:id': 'FamilyController.show',
+  'GET /families/:id/edit': 'FamilyController.edit',
+  'POST /famlies': 'FamilyController.create',
+  'PUT /families/:id': 'FamilyController.update',
   // transactions
-  'GET /transactions/new': { TransactionController.new },
-  'GET /transactions/:id': { TransactionController.show },
-  'POST /transactions': { TransactionController.create },
+  'GET /transactions/new': 'TransactionController.new',
+  'GET /transactions/:id': 'TransactionController.show',
+  'POST /transactions': 'TransactionController.create',
 
 };
