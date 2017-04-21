@@ -43,9 +43,7 @@ module.exports = {
 	},
 
 	adultLogout: function (req, res) {
-		req.session.destroy(function(err) {
-			res.redirect('/');
-	  });
+
 	},
 
 	// Auth for Kids //
@@ -61,7 +59,26 @@ module.exports = {
 	},
 
 	kidLogin: function (req, res) {
+		var reqEmail = req.param('email');
+		var reqPassword = req.param('password');
+		var emailValidated = validator.isEmail(reqEmail);
 
+		if (emailValidated && reqPassword) {
+			Kid.findOne({email: reqEmail}, function(err, kid) {
+
+				bcrypt.compare(reqPassword, kid.encryptedPassword, function(err, isMatch) {
+					if (err) console.error;
+
+					if (isMatch) {
+						req.session.authenticated = true;
+						req.session.Kid = kid;
+						res.redirect('/kidHome');
+					} else {
+						res.redirect('/kidLogin');
+					};
+				});
+			});
+		};
 	},
 
 	kidLogout: function (req, res) {
