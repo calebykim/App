@@ -31,12 +31,14 @@ module.exports = {
   },
 
   beforeCreate: function(params, next) {
-    bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
-      if (err) return next(err);
+    if (params['password'] == params['password_confirmation']) {
+      bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
+        if (err) return next(err);
 
-      params.encryptedPassword = encryptedPassword;
+        params.encryptedPassword = encryptedPassword;
 
-      next();
-    });
+        next();
+      });
+    }
   }
 };

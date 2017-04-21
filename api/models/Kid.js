@@ -5,6 +5,8 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
+var bcrypt = require('bcrypt');
+
 module.exports = {
   attributes: {
     id: {
@@ -31,12 +33,14 @@ module.exports = {
   },
 
   beforeCreate: function(params, next) {
-    bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
-      if (err) return next(err);
+    if (params['password'] == params['password_confirmation']) {
+      bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
+        if (err) return next(err);
 
-      params.encryptedPassword = encryptedPassword;
+        params.encryptedPassword = encryptedPassword;
 
-      next();
-    });
+        next();
+      });
+    }
   }
 };

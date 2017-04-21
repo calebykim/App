@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=typeof title == 'undefined' ? 'New Sails App' : title%></title>
+    <title><%=typeof title == 'undefined' ? 'Finnest' : title%></title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,6 +29,8 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/Auth/Adult/login.css">
+    <link rel="stylesheet" href="/styles/Auth/Adult/signup.css">
     <link rel="stylesheet" href="/styles/foundation.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
@@ -55,17 +57,6 @@
           <div class="top-bar-right">
             <a href='#'><%= req.session.Kid.email %></a>
             <a href='/adultLogout'>Logout</a>
-          </div>
-        </div>
-      </div>
-    <% } else { %>
-      <div class="top-bar">
-        <div class="top-bar-title">Finnest</div>
-        <div>
-          <div class="top-bar-left"></div>
-          <div class="top-bar-right">
-            <a href='/adultLogin'>Log In</a>
-            <a href='/adultSignup'>Sign Up</a>
           </div>
         </div>
       </div>

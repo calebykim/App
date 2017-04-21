@@ -1,14 +1,14 @@
-<form action="/kidLogin" method="POST">
-
+<form class='login-form' action="/kidLogin" method="POST">
+  <h4 class="text-center">Kid Log In</h4>
   <label for="email">Email</label>
-  <input name="email" type="email"/>
+  <input name="email" type="email" placeholder="kid@email.com"/>
   <br/>
 
   <label for="password">Password</label>
-  <input name="password" type="password"/>
+  <input name="password" type="password" placeholder="Password"/>
   <br/>
 
-  <input type="submit"/>
-</form>
+  <p><input type="submit" class="button expanded" value="Log in"></input></p>
 
-<a href='/adultSignup'>Sign Up</a>
+  <p class="text-center"><a href='/kidSignup'>Sign Up</a></p>
+</form>

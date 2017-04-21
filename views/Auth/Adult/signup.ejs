@@ -1,16 +1,17 @@
-<form action="/adultSignup" method="POST">
+<form class='signup-form' action="/adultSignup" method="POST">
+  <h4 class="text-center">Adult Sign Up</h4>
 
   <label for="email">Email</label>
-  <input name="email" type="email"/>
+  <input name="email" type="email" placeholder='parent@email.com'/>
   <br/>
 
   <label for="password">Password</label>
-  <input name="password" type="password"/>
+  <input name="password" type="password" placeholder='Password'/>
   <br/>
 
   <label for="password_confirmation">Confirm</label>
-  <input name="password_confirmation" type="password"/>
+  <input name="password_confirmation" type="password" placeholder='Confirm Password'/>
   <br/>
 
-  <input type="submit"/>
+  <p><input type="submit" class="button expanded" value="Sign Up"></input></p>
 </form>
