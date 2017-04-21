@@ -19,10 +19,6 @@ module.exports = {
 
   update: function(req, res) {
 
-  },
-
-  destroy: function(req, res) {
-
   }
 
 };

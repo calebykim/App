@@ -22,10 +22,6 @@ module.exports = {
   update: function(req, res) {
     var kid = Kid.findOne({id: req.params.id });
 
-  },
-
-  destroy: function(req, res) {
-
   }
 
 };
