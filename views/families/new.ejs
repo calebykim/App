@@ -1,0 +1,15 @@
+<form class="form" action="/families" method="POST">
+  <h3 class='text-center'>Create a Nest</h3>
+
+  <label for="name">To: </label>
+  <input name="name" type="text" placeholder='' />
+  <br/>
+
+  <label for="amount">Amount: </label>
+  <input name="amount" type="text" placeholder='<%=myBalance%>' />
+  <br/>
+
+  <input type='hidden' name='isKid' value='<%=isKid%>'/>
+
+  <input class='button expanded' type='submit'></input>
+</form>

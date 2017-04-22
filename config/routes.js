@@ -1,5 +1,6 @@
 module.exports.routes = {
-  '/': { view: 'Auth/index' },
+  '/': 'HomepageController.correctPage',
+  '/auth/index': {view: 'Auth/index'},
 
 /**
 * ADULT AUTH
@@ -10,7 +11,7 @@ module.exports.routes = {
   // controller requests
   'POST /adultLogin': 'AuthController.adultLogin',
   'POST /adultSignup': 'AuthController.adultSignup',
-  'POST /adultLogout': 'AuthController.adultLogout',
+  '/adultLogout': 'AuthController.adultLogout',
 
 /**
 * KID AUTH
@@ -21,7 +22,7 @@ module.exports.routes = {
   // controller requests
   'POST /kidLogin': 'AuthController.kidLogin',
   'POST /kidSignup': 'AuthController.kidSignup',
-  'POST /kidLogout': 'AuthController.kidLogout',
+  '/kidLogout': 'AuthController.kidLogout',
 
 /**
 * ADULT ROUTES
@@ -44,6 +45,7 @@ module.exports.routes = {
   'GET /kids/:id/edit': 'KidController.edit',
   'PUT /kids/:id': 'KidController.update',
   // families
+  'GET /families/new': 'FamilyController.new',
   'GET /families/:id': 'FamilyController.show',
   'GET /families/:id/edit': 'FamilyController.edit',
   'POST /famlies': 'FamilyController.create',

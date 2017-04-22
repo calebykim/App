@@ -6,27 +6,46 @@ var bcrypt = require('bcrypt');
 
 module.exports = {
   attributes: {
-    id: {
-      type: 'integer',
-      autoIncrement: true,
-      primaryKey: true
-    },
-    family_id:{
-      type: 'integer',
-      autoIncrement: true
-    },
     email:{
       type: 'string',
-      unique: true
+      unique: true,
+      required: true
+    },
+    first_name: {
+      type: 'string',
+      required: true
+    },
+    last_name: {
+      type: 'string',
+      required: true
     },
     encryptedPassword:{
       type: 'string'
     },
     savings_balance:{
-      type: 'float'
+      type: 'float',
+      defaultsTo: 0.00
     },
     checking_balance:{
-      type: 'float'
+      type: 'float',
+      defaultsTo: 0.00
+    },
+    family: {
+      model: 'family'
+    },
+    getKids: function() {
+      var family = this.family;
+      var kids;
+
+      if (family) {
+        kids = family.kids;
+      } else {
+        kids = [];
+      }
+      return kids;
+    },
+    verifyKid: function(kid_email) {
+      return true // for debugging purposes
     }
   },
 

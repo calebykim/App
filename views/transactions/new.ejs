@@ -1,0 +1,26 @@
+<form class="form" action="/transactions" method="POST">
+  <h3 class='text-center'>Send Money</h3>
+  <!-- send money by dropdown or entering email -->
+
+  <label for="recipient_email">To: </label>
+  <input name="recipient_email" type="email" placeholder='Email' />
+  <br/>
+
+  <p>Balance: <%=myBalance%></p>
+  <label for="amount">Amount: </label>
+  <input name="amount" type="text" placeholder='<%=myBalance%>' />
+  <br/>
+  <% var sender; %>
+  <% if (!isKid) { %>
+  <%  sender = req.session.Adult; %>
+  <% } else { %>
+  <%  sender = req.session.Kid; %>
+  <% } %>
+
+  <input type='hidden' name='sender_email' value='<%=sender.email%>'/>
+
+  <input class='button expanded' type='submit'></input>
+</form>
+
+
+<%= recipientOptions %>

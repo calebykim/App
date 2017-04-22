@@ -29,29 +29,33 @@
     -->
 
     <!--STYLES-->
-    <link rel="stylesheet" href="/styles/Auth/Adult/login.css">
-    <link rel="stylesheet" href="/styles/Auth/Adult/signup.css">
+    <link rel="stylesheet" href="/styles/adultHome.css">
+    <link rel="stylesheet" href="/styles/app.css">
     <link rel="stylesheet" href="/styles/foundation.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
   </head>
 
   <body>
+    <% var logoText = "http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_200,w_200,f_auto,q_auto/v1/1084130/logo_old-01_swv6a5-2_znwimx.png"; %>
 
     <% if (req.session.Adult) { %>
       <div class="top-bar">
-        <div class="top-bar-title">Finnest</div>
+        <div class="top-bar-title"><img src="<%= logoText %>"></img></div>
         <div>
           <div class="top-bar-left"></div>
           <div class="top-bar-right">
-            <a href='#'><%= req.session.Adult.email %></a>
+            <a href='#'>
+              <%= req.session.Adult.first_name %>
+              <%= req.session.Adult.last_name %>
+            </a>
             <a href='/adultLogout'>Logout</a>
           </div>
         </div>
       </div>
     <% } else if (req.session.Kid) { %>
       <div class="top-bar">
-        <div class="top-bar-title">Finnest</div>
+        <div class="top-bar-title"><img src="<%= logoText %>"></img></div>
         <div>
           <div class="top-bar-left"></div>
           <div class="top-bar-right">

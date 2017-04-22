@@ -1,1 +1,7 @@
-<%= req.session.Adult.email %>
+<% var currentAdult = req.session.Adult; %>
+
+<div class="expanded button-group">
+  <a class="button" href='/transactions/new'>Make a Transaction</a>
+  <a class="button" href='/families/<%=currentAdult.family%>'>My Family</a>
+  <a class="button">Settings</a>
+</div>

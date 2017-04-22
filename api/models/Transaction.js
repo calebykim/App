@@ -8,19 +8,14 @@
 module.exports = {
 
   attributes: {
-    id: {
-      type: 'integer',
-      autoIncrement: true,
-      primaryKey: true
-    },
     amount:{
       type: 'float'
     },
-    sender_id:{
-      type: 'integer'
+    sender_email:{
+      type: 'string'
     },
-    recipient_id:{
-      type: 'integer'
+    recipient_email:{
+      type: 'string'
     },
     created_at:{
       type: 'datetime'

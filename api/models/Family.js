@@ -7,15 +7,17 @@
 
 module.exports = {
   attributes: {
-      id:{
-        type : 'integer',
-        primaryKey: true,
-        autoIncrement: true
-      },
-      name:{
-        type : 'string',
-        required : true
-      }
+    name:{
+      type : 'string',
+      required : true
+    },
+    adults: {
+      collection: 'adult',
+      via: 'family'
+    },
+    kids: {
+      collection: 'kid',
+      via: 'family'
+    }
   }
 };
-

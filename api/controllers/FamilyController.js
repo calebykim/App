@@ -6,7 +6,12 @@
  */
 
 module.exports = {
+  new: function(req,res) {
+    res.view('families/new');
+  },
+
   create: function (req, res) {
+    
   },
 
   show: function (req, res) {
@@ -14,6 +19,7 @@ module.exports = {
   },
 
   edit: function (req, res) {
+    Family.findOne({id: req.params['']})
 
   },
 
