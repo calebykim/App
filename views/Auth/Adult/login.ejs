@@ -1,14 +1,27 @@
-<form class='form' action="/adultLogin" method="POST">
-  <h4 class="text-center">Adult Log In</h4>
-  <label for="email">Email</label>
-  <input name="email" type="email" placeholder="parent@email.com"/>
-  <br/>
 
-  <label for="password">Password</label>
-  <input name="password" type="password" placeholder="Password"/>
-  <br/>
+<div class = "container">
+  <div class = "row">
+    <div class="large-6 large-centered columns">
+      <div class="translucent-form-overlay">
+        <form class="log-in-form" action="/adultLogin" method="POST">
+          <h4 class="text-center">Adult Log In</h4>
+          <label for="email">Email</label>
+          <input id=roundInput name="email" type="email" placeholder="parent@email.com"/>
+          <br/>
+          <label for="password">Password</label>
+          <input id=roundInput name="password" type="password" placeholder="password"/>
+          <br/>
+          <p><input id="roundButton" type="submit" class="button expanded" value="Log in"></input></p>
+          <p id="signUpButton" class="text-center"><a href='/adultSignup'>Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <p><input type="submit" class="button expanded" value="Log in"></input></p>
 
-  <p class="text-center"><a href='/adultSignup'>Sign Up</a></p>
-</form>
+
+
+
+
+

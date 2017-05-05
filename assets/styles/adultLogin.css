@@ -1,0 +1,37 @@
+.container{
+   background-color: rgba(72, 209, 204, 0.46);
+   background-image: url("/images/legs.jpg");
+  background-position: top;
+   height: 100vh;
+  font-family: "Open Sans", "Myriad Pro", Arial, sans-serif;
+}
+
+#roundInput{
+  border-radius: 8px;
+}
+#roundButton{
+  border-radius: 8px;
+  font-size:20px;
+}
+#signUpButton{
+  font-size: 20px;
+}
+
+label{
+  color: white;
+}
+.translucent-form-overlay {
+  font-size: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.41);
+  padding: 20px;
+  color: #fefefe;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
