@@ -1,29 +1,28 @@
-<form class='form' action="/kidSignup" method="POST">
-  <h4 class="text-center">Kid Sign Up</h4>
+<link rel="stylesheet" href="/styles/adultLogin.css" >
+<link rel="stylesheet" href="/styles/signup.css" >
 
-  <label for="parent_email">Parent Email</label>
-  <input name="parent_email" type="email" placeholder='parent@email.com'/>
-  <br/>
+  <div class="translucent-form-overlay">
+      <form class="log-in-form" action="/kidSignup" method="POST">
+        <h4 class="text-center">Kid Sign Up</h4>
 
-  <label for="email">Your Email</label>
-  <input name="email" type="email" placeholder='kid@email.com'/>
-  <br/>
+        <label for="parent_email">Parent Email</label>
+        <input name="parent_email" type="email" placeholder='parent@email.com'/>
 
-  <label for="first_name">First Name</label>
-  <input name="first_name" type="text" placeholder='First Name'/>
-  <br/>
+        <label for="email">Your Email</label>
+        <input name="email" type="email" placeholder='kid@email.com'/>
 
-  <label for="last_name">Last Name</label>
-  <input name="last_name" type="text" placeholder='Last Name'/>
-  <br/>
+        <label for="first_name">First Name</label>
+        <input name="first_name" type="text" placeholder='First Name'/>
 
-  <label for="password">Password</label>
-  <input name="password" type="password" placeholder='Password'/>
-  <br/>
+        <label for="last_name">Last Name</label>
+        <input name="last_name" type="text" placeholder='Last Name'/>
 
-  <label for="password_confirmation">Confirm</label>
-  <input name="password_confirmation" type="password" placeholder='Confirm Password'/>
-  <br/>
+        <label for="password">Password</label>
+        <input name="password" type="password" placeholder='Password'/>
 
-  <p><input type="submit" class="button expanded" value="Sign Up"></input></p>
-</form>
+        <label for="password_confirmation">Confirm</label>
+        <input name="password_confirmation" type="password" placeholder='Confirm Password'/>
+        <p><input type="submit" class="button expanded" value="Sign Up"></input></p>
+      </form>
+  </div>
+</div>

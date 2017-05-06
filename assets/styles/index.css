@@ -10,6 +10,49 @@ body {
 	background-size: cover;
 }
 
+header::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.logo {
+	float: left;
+}
+
+nav {
+	float: right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	/*margin-left: 70px;*/ /* space between each li element*/
+	margin-right: 110px;
+	padding-top: 25px;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 24px;
+
+}
+
+nav a:hover {
+	color: black;
+}
 
 #maintext {
 	color: white;

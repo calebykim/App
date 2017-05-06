@@ -23,6 +23,9 @@ module.exports.routes = {
   'POST /kidLogin': 'AuthController.kidLogin',
   'POST /kidSignup': 'AuthController.kidSignup',
   '/kidLogout': 'AuthController.kidLogout',
+  'GET /ourWhat': {view: 'miscellaneous/what_we_do'},
+  'GET /ourFAQ': {view: 'miscellaneous/FAQ'},
+
 
 /**
 * ADULT ROUTES

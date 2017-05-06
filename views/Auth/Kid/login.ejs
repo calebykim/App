@@ -1,14 +1,39 @@
-<form class='form' action="/kidLogin" method="POST">
-  <h4 class="text-center">Kid Log In</h4>
-  <label for="email">Email</label>
-  <input name="email" type="email" placeholder="kid@email.com"/>
-  <br/>
+<link rel="stylesheet" href="/styles/adultLogin.css" >
 
-  <label for="password">Password</label>
-  <input name="password" type="password" placeholder="Password"/>
-  <br/>
 
-  <p><input type="submit" class="button expanded" value="Log in"></input></p>
+<!--<form class='form' action="/kidLogin" method="POST">-->
+  <!--<h4 class="text-center">Kid Log In</h4>-->
+  <!--<label for="email">Email</label>-->
+  <!--<input name="email" type="email" placeholder="kid@email.com"/>-->
+  <!--<br/>-->
 
-  <p class="text-center"><a href='/kidSignup'>Sign Up</a></p>
-</form>
+  <!--<label for="password">Password</label>-->
+  <!--<input name="password" type="password" placeholder="Password"/>-->
+  <!--<br/>-->
+
+  <!--<p><input type="submit" class="button expanded" value="Log in"></input></p>-->
+
+  <!--<p class="text-center"><a href='/kidSignup'>Sign Up</a></p>-->
+<!--</form>-->
+
+<div class = "container">
+  <div class = "row">
+    <div class="large-6 large-centered columns">
+      <div class="translucent-form-overlay">
+        <form class="log-in-form" action="/kidLogin" method="POST">
+          <h4 class="text-center">Kid Log In</h4>
+          <label for="email">Email</label>
+          <input id=roundInput name="email" type="email" placeholder="kid@email.com"/>
+          <br/>
+          <label for="password">Password</label>
+          <input id=roundInput name="password" type="password" placeholder="password"/>
+          <br/>
+          <p><input id="roundButton" type="submit" class="button expanded" value="Log in"></input></p>
+          <p class="text-center"><a href='/kidSignup'>Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
