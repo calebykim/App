@@ -1,12 +1,9 @@
 /**
  * DepositController
- *
- * @description :: Server-side logic for managing Deposits
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 var bankAPI = require('axios').create({
-	baseURL: 'http://localhost:3000'
+	baseURL: sails.config.bankApi.baseURL
 });
 
 module.exports = {
