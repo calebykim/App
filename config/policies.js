@@ -1,5 +1,4 @@
 module.exports.policies = {
-  // '*': true,
   AdultController: {
     show: 'isRequestedAdult',
     edit: 'isRequestedAdult',
@@ -21,5 +20,8 @@ module.exports.policies = {
     new: 'sessionAuth'
     // create: ['hasSufficientFunds', 'isPartOfTransaction'],
     // show: ['isFamilyMember', 'isPartOfTransaction']
+  },
+  DepositController: {
+    '*': 'sessionAuth'
   }
 };

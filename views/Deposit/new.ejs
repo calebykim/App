@@ -1,0 +1,24 @@
+<h3>DEPOSIT</h3>
+<h4>Your accounts</h4>
+
+<div class='row large-up-4'>
+  <% balances.forEach(function(info) { %>
+    <div class="column column-block">
+      <p>
+        <span><%= info.type %></span>
+        <span>********</span>
+        <span><%= info.number %></span>
+      </p>
+      <p>
+        <span>Balance: </span>
+        <span>$<%= info.balance %></span>
+      </p>
+    </div>
+  <% }) %>
+</div>
+
+<form action="/deposits" method="POST">
+  Amount: <input type="text" name="amount"><br>
+  Notes: <input type="text" name="description"><br>
+  <input type='submit'>
+</form>

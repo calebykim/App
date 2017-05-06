@@ -21,8 +21,8 @@ module.exports = {
 				family.adults.add(adult);
 				family.save(function(err){});
 			});
-
-			res.redirect('/adultHome');
+			
+			res.redirect('/');
 		});
 	},
 

@@ -1,16 +1,14 @@
 /**
  * TransactionController
- *
- * @description :: Server-side logic for managing transactions
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 module.exports = {
+
 	new: function (req, res) {
 
 		if (req.session.Adult) {
 			Adult.findOne({id:req.session.Adult.id}).exec( function(err,adult) {
-				return res.view('transactions/new', {
+				res.view('transactions/new', {
 					recipientOptions: adult.getKids(),
 					myBalance: adult.checking_balance,
 					isKid: false
@@ -23,7 +21,7 @@ module.exports = {
 				var parents = kid.family.parents;
 				var siblings = kid.getSiblings();
 
-				return res.view('transactions/new', {
+				res.view('transactions/new', {
 					recipientOptions: parents.concat(siblings),
 					myBalance: kid.checking_balance,
 					isKid: true

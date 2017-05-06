@@ -55,4 +55,7 @@ module.exports.routes = {
   'GET /transactions/:id': 'TransactionController.show',
   'POST /transactions': 'TransactionController.create',
 
+  // Deposit
+  'GET /deposits/new': 'DepositController.new',
+  'POST /deposits': 'DepositController.create'
 };
