@@ -1,0 +1,40 @@
+body, 
+html {
+	/* we need to target body to make it go 100%*/
+	min-height: 100%;
+}
+
+body {
+	background-image: url("/images/legs-dim.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+#maintext {
+	color: white;
+	width: 100%;
+	max-width: 960px;
+	font-size: 90px;
+	font-family: "Amatic SC", cursive;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+	margin: 40px auto; 
+	/* 40 pixels on the top and auto margins for left andright */
+	text-align: center;
+	font-weight: bold; 
+
+}
+
+#subtext {
+    color: white;
+    margin-bottom: 70px;
+	width: 100%;
+	font-weight: bold; 
+	max-width: 960px;
+	font-size: 70px;
+	font-family: "Amatic SC", cursive;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+	margin: 40px auto; 
+	/* 40 pixels on the top and auto margins for left andright */
+	text-align: center;
+}

@@ -1,7 +1,7 @@
 # finnest
 
 a [Sails](http://sailsjs.org) application
-
+#test
 ## HOW TO RUN:
   1. npm install sails -g (if sails is not already installed)
   2. npm install (installs all necessary node_modules)
