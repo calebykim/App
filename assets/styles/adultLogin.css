@@ -1,7 +1,7 @@
 .container{
    background-color: rgba(72, 209, 204, 0.46);
    background-image: url("/images/legs.jpg");
-  background-position: top;
+    background-position: top;
    height: 100vh;
   font-family: "Open Sans", "Myriad Pro", Arial, sans-serif;
 }
@@ -11,12 +11,11 @@
 }
 #roundButton{
   border-radius: 8px;
-  font-size:20px;
+  font-size:15px;
 }
 #signUpButton{
   font-size: 20px;
 }
-
 label{
   color: white;
 }
@@ -26,12 +25,16 @@ label{
   max-width: 500px;
   width: 100%;
   background-color: rgba(54, 54, 54, 0.41);
-  padding: 20px;
+  padding: 10px;
   color: #fefefe;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#kSign{
+  background-color: rgba(255, 174, 0, 0.55);
 }
 
 
