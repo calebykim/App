@@ -1,24 +1,52 @@
-<h3>TRANSFER</h3>
-<h4>Your accounts</h4>
+<link rel="stylesheet" href="/styles/style.css">
+<link rel="stylesheet" href="/styles/transfer.css">
 
-<div class='row large-up-4'>
+<div class='main-container'>
+
+<h4>Send money to friends and family</h4>
+
+<div class='shadowed-container'>
   <% balances.forEach(function(info) { %>
-    <div class="column column-block">
+    <div class='account-info'>
       <p>
+        <strong>Your account: </strong>
         <span><%= info.type %></span>
         <span>********</span>
         <span><%= info.number %></span>
       </p>
       <p>
-        <span>Balance: </span>
-        <span>$<%= info.balance %></span>
+        <strong>Balance: </strong>
+        <a id='show-balance'>&nbsp;&nbsp;show</a>
+        <span id='balance'> &nbsp;$<%= info.balance %></span>
       </p>
     </div>
   <% }) %>
+
+  <form  action="/transfers" method="POST">
+  <label for="to">To: </label>
+  <input type="email" name="to" placeholder="Email" required="required">
+
+  <label for="">Amount: </label>
+  <input type="number" name="amount" placeholder="$0.00" required="required">
+  <input class='customized-button customized-button-orange' type='submit'>
+
+  </form>
 </div>
 
-<form action="/transfers" method="POST">
-  To: <input type="email" name="to"><br>
-  Amount: <input type="text" name="amount"><br>
-  <input type='submit'>
-</form>
+</div>
+
+<script src="/js/dependencies/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    console.log('hi');
+    $('#balance').hide();
+    $('#show-balance').click (function(){
+      $('#show-balance').hide();
+      $('#balance').show();
+    });
+    $('#balance').click (function(){
+      $('#show-balance').show();
+      $('#balance').hide();
+    });
+  });
+</script>
