@@ -1,39 +1,26 @@
 <link rel="stylesheet" href="/styles/adultLogin.css" >
+<link rel="stylesheet" href="/styles/style.css" >
 
-
-<!--<form class='form' action="/kidLogin" method="POST">-->
-  <!--<h4 class="text-center">Kid Log In</h4>-->
-  <!--<label for="email">Email</label>-->
-  <!--<input name="email" type="email" placeholder="kid@email.com"/>-->
-  <!--<br/>-->
-
-  <!--<label for="password">Password</label>-->
-  <!--<input name="password" type="password" placeholder="Password"/>-->
-  <!--<br/>-->
-
-  <!--<p><input type="submit" class="button expanded" value="Log in"></input></p>-->
-
-  <!--<p class="text-center"><a href='/kidSignup'>Sign Up</a></p>-->
-<!--</form>-->
-
-<div class = "container">
-  <div class = "row">
-    <div class="large-6 large-centered columns">
-      <div class="translucent-form-overlay">
-        <form class="log-in-form" action="/kidLogin" method="POST">
-          <h4 class="text-center">Kid Log In</h4>
-          <label for="email">Email</label>
-          <input id=roundInput name="email" type="email" placeholder="kid@email.com"/>
-          <br/>
-          <label for="password">Password</label>
-          <input id=roundInput name="password" type="password" placeholder="password"/>
-          <br/>
-          <p><input id="roundButton" type="submit" class="button expanded" value="Log in"></input></p>
-          <p class="text-center"><a href='/kidSignup'>Sign Up</a></p>
-        </form>
-      </div>
+<header class='header-home'>
+    <a href='/'><img src= "/images/finnest_logo.png" alt = "logo" class = "logo"></a>
+    <div>
+      <a href = "/ourWhat"> What is Finnest? </a>
+      <a href = "/ourFAQ"> FAQ </a>
     </div>
-  </div>
+</header>
+
+<div class = "main-container form-container">
+  <form class="log-in-form" action="/kidLogin" method="POST">
+    <h4 class="text-center">Kid Log In</h4>
+    <input name="email" type="email" placeholder="Email" required="required" />
+    <input name="password" type="password" placeholder="Password" required="required" />
+    <input type="submit" class="customized-button customized-button-blue" value="Log in"></input>
+  </form>
+
+  <hr/>
+  <p>New to Finnest?</p>
+  <a href='/adultSignup'><button class='customized-button'>Sign Up</button></a>
+
 </div>
 
 

@@ -1,28 +1,38 @@
-<link rel="stylesheet" href="/styles/adultLogin.css" >
 <link rel="stylesheet" href="/styles/signup.css" >
+<link rel="stylesheet" href="/styles/style.css" >
 
-  <div class="translucent-form-overlay">
-      <form class="log-in-form" action="/kidSignup" method="POST">
-        <h4 class="text-center">Kid Sign Up</h4>
-
-        <label for="parent_email">Parent Email</label>
-        <input name="parent_email" type="email" placeholder='parent@email.com'/>
-
-        <label for="email">Your Email</label>
-        <input name="email" type="email" placeholder='kid@email.com'/>
-
-        <label for="first_name">First Name</label>
-        <input name="first_name" type="text" placeholder='First Name'/>
-
-        <label for="last_name">Last Name</label>
-        <input name="last_name" type="text" placeholder='Last Name'/>
-
-        <label for="password">Password</label>
-        <input name="password" type="password" placeholder='Password'/>
-
-        <label for="password_confirmation">Confirm</label>
-        <input name="password_confirmation" type="password" placeholder='Confirm Password'/>
-        <p><input type="submit" class="button expanded" value="Sign Up"></input></p>
-      </form>
+<header class='header-normal'>
+  <a href='/'><img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/v1/1084130/pan9vismbjnaelgvkxkn.png"></img></a>
+  <div>
+    <a href = "/ourWhat"> What is Finnest? </a>
+    <a href = "/ourFAQ"> FAQ </a>
   </div>
+</header>
+
+<div class="main-container">
+  <form class="log-in-form" action="/kidSignup" method="POST">
+    <h4 class="text-center">Kid Sign Up</h4>
+
+    <label for="parent_email"><span class="required-star">* </span>Parent Email</label>
+    <input name="parent_email" type="email" placeholder='parent@email.com' required="required"/>
+
+    <label for="email"><span class="required-star">* </span>Your Email</label>
+    <input name="email" type="email" placeholder='kid@email.com' required="required"/>
+
+    <label for="first_name"><span class="required-star">* </span>First Name</label>
+    <input name="first_name" type="text" placeholder='First Name' required="required"/>
+
+    <label for="last_name"><span class="required-star">* </span>Last Name</label>
+    <input name="last_name" type="text" placeholder='Last Name' required="required"/>
+
+    <label for="password"><span class="required-star">* </span>Password</label>
+    <input name="password" type="password" placeholder='Password' required="required"/>
+
+    <label for="password_confirmation"><span class="required-star">* </span>Confirm</label>
+    <input name="password_confirmation" type="password" placeholder='Confirm Password' required="required"/><br/>
+
+    <input type = 'checkbox'/><label><span class="required-star">* </span>I agree to Finnest's <a>Terms of Use</a></label><br/>
+
+    <p><input type="submit" class="customized-button-blue customized-button" value="Sign Up"></input></p>
+  </form>
 </div>

@@ -1,17 +1,30 @@
-#MainBodyDiv {
+/*#MainBodyDiv {
 	width: 80%;
 	margin: auto;
 	margin-top: 50px;
 
 }
-
+*/
 body {
 	background-color: white;
 }
 
+.info-container > h1 {
+	font-family: titleFont;
+	color: 	#3FB1B8;
+}
+
+.info-container > h5 {
+	font-family: subTitle;
+	color: rgb(100,100,100);
+}
+
+.info-container > p {
+	font-family: subTitle;
+}
 
 
-
+/*
 h1 {
 	border: 1px solid black;
     margin-top: 100px;
@@ -26,7 +39,7 @@ h1 {
 	font-family: "Amatic SC", cursive;
 	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
 	margin: 40px auto; 
-	/* 40 pixels on the top and auto margins for left andright */
+	/* 40 pixels on the top and auto margins for left andright 
 	text-align: center;
 	font-weight: bold; 
 
@@ -49,17 +62,6 @@ p {
     background-color: #55d6aa;
  }
 
-header {
-	background: lightblue;
-	padding-bottom:20px;
-}
-
-header::after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
 .container {
 	width: 100%;
 	margin: 0 auto;
@@ -67,32 +69,4 @@ header::after {
 
 .logo {
 	float: left;
-}
-
-nav {
-	float: right;
-}
-nav ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-nav li {
-	display: inline-block;
-	/*margin-left: 70px;*/ /* space between each li element*/
-	margin-right: 110px;
-	padding-top: 25px;
-}
-
-nav a {
-	color: black;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 24px;
-
-}
-
-nav a:hover {
-	color: white;
-}
+}*/

@@ -1,9 +1,45 @@
 <% var currentAdult = req.session.Adult; %>
 
-<div class="expanded button-group">
-  <a class="button" href='/transactions/new'>Make a Transaction</a>
-  <a class="button" href='/families/<%=currentAdult.family%>'>My Family</a>
-  <a class="button">Settings</a>
+<link rel="stylesheet" href="/styles/style.css">
+<link rel="stylesheet" href="/styles/adultHome.css">
+
+<!-- <div className = 'menu'>
+	<div>
+		<Link to='/register-child'>
+			<img src='public/img/reg_kid.png' />
+			<h4>Register a Child</h4>
+		</Link>
+	</div>
+	<div>
+		<Link to='/transfer'>
+			<img src='public/img/transfer.png' />
+			<h4>Make a Transfer</h4>
+		</Link>
+	</div>
+	<div>
+		<Link to='/history'>
+			<img src='public/img/tracking.png' />
+			<h4>Track Account History</h4>
+		</Link>
+	</div>
+</div> -->
+
+<div class="container">
+	<div>
+		<a href='/transactions/new'>
+			<img src='/images/transfer.png' /><br/>
+			<h4>Make a Transaction</h4>
+		</a>
+	</div>
+	<div>
+		<a href='/families/<%=currentAdult.family%>'>
+			<img src='/images/reg_kid.png' />
+			<h4>My Family</h4>
+		</a>
+	</div>
+	<div>
+		<a ><img src='/images/tracking.png' /><h4>Settings</h4></a>
+	</div>
 </div>
 
 <!-- --> 

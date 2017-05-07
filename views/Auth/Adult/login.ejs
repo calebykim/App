@@ -1,24 +1,6 @@
 <link rel="stylesheet" href="/styles/adultLogin.css" >
 <link rel="stylesheet" href="/styles/style.css" >
 
-<!-- <div className = 'signin'>
-        <header>
-          <a href='/'><img src='public/img/1.png' /></a>
-          <div>
-            <Link to='/login'>Sign In</Link>
-            <Link to='/register'>Sign Up</Link>
-          </div>
-        </header>
-        <div>
-          <input type = 'email' placeholder='Email' /><br/>
-          <input type = 'password' placeholder='Password' /><br/>
-          <input type = 'checkbox'/><label>remember me</label><br/>
-          <Link to='/dashboard' ><button className='orangebutton'>Log In</button></Link>
-          <hr />
-          <p>New to Finnest?</p>
-          <Link to='/register'><button>Sign Up</button></Link>
-        </div>
-      </div> -->
 <header class='header-home'>
     <a href='/'><img src= "/images/finnest_logo.png" alt = "logo" class = "logo"></a>
     <div>
@@ -27,18 +9,17 @@
     </div>
 </header>
 
-<div class = "form-container">
-  
-        <form action="/adultLogin" method="POST">
-          <h4 class="text-center">Adult Log In</h4>
-          <input name="email" type="email" placeholder="Email"/>
-          <input name="password" type="password" placeholder="Password"/>
-          <input class='customized-button-orange customized-button' type="submit" class="button expanded" value="Log in"></input>
-          <hr/>
-          <p>New to Finnest?</p>
-          <a href='/adultSignup'><button class='customized-button'>Sign Up</button></a>
-        </form>
+<div class = "main-container form-container">
+  <form action="/adultLogin" method="POST">
+    <h4 class="text-center">Adult Log In</h4>
+    <input name="email" type="email" placeholder="Email" required="required" />
+    <input name="password" type="password" placeholder="Password" required="required" />
+    <input class='customized-button-orange customized-button' type="submit" class="button expanded" value="Log in"></input>
+  </form>
 
+  <hr/>
+  <p>New to Finnest?</p>
+  <a href='/adultSignup'><button class='customized-button'>Sign Up</button></a>
 </div>
 
 

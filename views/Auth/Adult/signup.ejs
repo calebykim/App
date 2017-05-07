@@ -1,24 +1,52 @@
-<link rel="stylesheet" href="/styles/adultLogin.css" >
 <link rel="stylesheet" href="/styles/signup.css" >
-<div class="translucent-form-overlay">
+<link rel="stylesheet" href="/styles/style.css" >
+
+<header class='header-normal'>
+  <a href='/'><img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/v1/1084130/pan9vismbjnaelgvkxkn.png"></img></a>
+  <div>
+    <a href = "/ourWhat"> What is Finnest? </a>
+    <a href = "/ourFAQ"> FAQ </a>
+  </div>
+</header>
+
+<!-- <div>
+          <input type = 'email' placeholder='Email' required/><br/>
+          <input type = 'password' placeholder='Password' /><br/>
+          <input type = 'password' placeholder='Confirm Password' /><br/>
+          <input type = 'text' placeholder='First Name' /><br/>
+          <input type = 'text' placeholder='Last Name' /><br/>
+          <input type = 'text' placeholder='SSN' /><br/>
+          <input type = 'text' placeholder='Address' /><br/>
+          <input type = 'tel' placeholder='Phone Number' /><br/>
+          <input type = 'text' placeholder='Some' /><br/>
+          <input type = 'text' placeholder='Other' /><br/>
+          <input type = 'text' placeholder='Inputs' /><br/>
+          <input type = 'checkbox'/><label>I agree to Finnest's <a href='/termsofuse'>Terms of Use</a></label><br/>
+          <hr />
+          <Link to='/login'><button className='orangebutton'>Submit</button></Link>
+        </div> -->
+
+<div class="main-container">
 <form class="log-in-form" action="/adultSignup" method="POST">
-  <h4 class="text-center">Adult Sign Up</h4>
+  <h3 class="text-center">Adult Sign Up</h3>
 
-  <label for="email">Email</label>
-  <input name="email" type="email" placeholder='parent@email.com'/>
+  <label for="email"><span class="required-star">* </span>Email</label>
+  <input name="email" type="email" placeholder='parent@email.com' required="required"/>
 
-  <label for="first_name">First Name</label>
-  <input name="first_name" type="text" placeholder='First Name'/>
+  <label for="first_name"><span class="required-star">* </span>First Name</label>
+  <input name="first_name" type="text" placeholder='First Name' required="required"/>
 
-  <label for="last_name">Last Name</label>
-  <input name="last_name" type="text" placeholder='Last Name'/>
+  <label for="last_name"><span class="required-star">* </span>Last Name</label>
+  <input name="last_name" type="text" placeholder='Last Name' required="required"/>
 
-  <label for="password">Password</label>
-  <input name="password" type="password" placeholder='Password'/>
+  <label for="password"><span class="required-star">* </span>Password</label>
+  <input name="password" type="password" placeholder='Password' required="required"/>
 
-  <label for="password_confirmation">Confirm</label>
-  <input name="password_confirmation" type="password" placeholder='Confirm Password'/>
+  <label for="password_confirmation"><span class="required-star">* </span>Confirm</label>
+  <input name="password_confirmation" type="password" placeholder='Confirm Password' required="required"/><br/>
 
-  <p><input type="submit" class="button expanded" value="Sign Up"></input></p>
+  <input type = 'checkbox'/><label><span class="required-star">* </span>I agree to Finnest's <a>Terms of Use</a></label><br/>
+
+  <p><input type="submit" class="customized-button-orange customized-button" value="Sign Up"></input></p>
 </form>
 </div>
