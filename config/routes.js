@@ -60,5 +60,8 @@ module.exports.routes = {
 
   // Deposit
   'GET /deposits/new': 'DepositController.new',
-  'POST /deposits': 'DepositController.create'
+  'POST /deposits': 'DepositController.create',
+  // Transfer
+  'GET /transfers/new': 'TransferController.new',
+  'POST /transfers': 'TransferController.create'
 };

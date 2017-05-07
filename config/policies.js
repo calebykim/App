@@ -23,5 +23,8 @@ module.exports.policies = {
   },
   DepositController: {
     '*': 'sessionAuth'
+  },
+  TransferController: {
+    '*': 'sessionAuth'
   }
 };
