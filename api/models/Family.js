@@ -7,9 +7,13 @@
 
 module.exports = {
   attributes: {
+    email: {
+      type: 'string',
+      unique: true,
+      required: true
+    },
     name:{
-      type : 'string',
-      required : true
+      type : 'string'
     },
     adults: {
       collection: 'adult',

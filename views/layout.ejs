@@ -46,7 +46,7 @@
             <%= req.session.Adult.last_name %>
           </a>
           <span> ! </span>
-          <a href='/adultLogout'>Logout</a>
+          <a href='/logout'>Logout</a>
         </div>
       </header>
     <% } else if (req.session.Kid) { %>
@@ -54,9 +54,9 @@
         <a href='/'><img src="<%= logoText %>"></img></a>
         <div>
           <span> Welcome </span>
-          <a class='header-username' href='/'><%= req.session.Kid.email %></a>
+          <a class='header-username' href='/'><%= req.session.Kid.first_name %></a>
           <span> ! </span>
-          <a href='/kidLogout'>Logout</a>
+          <a href='/logout'>Logout</a>
         </div>
       </header>
     <% } %>

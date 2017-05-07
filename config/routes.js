@@ -15,7 +15,6 @@ module.exports.routes = {
   // controller requests
   'POST /adultLogin': 'AuthController.adultLogin',
   'POST /adultSignup': 'AuthController.adultSignup',
-  '/adultLogout': 'AuthController.adultLogout',
 
 /**
 * KID AUTH
@@ -26,13 +25,13 @@ module.exports.routes = {
   // controller requests
   'POST /kidLogin': 'AuthController.kidLogin',
   'POST /kidSignup': 'AuthController.kidSignup',
-  '/kidLogout': 'AuthController.kidLogout',
 
+  '/logout': 'AuthController.logout',
 
 /**
 * ADULT ROUTES
 */
-  'GET /adultHome': {view: 'adults/homepage'},
+  'GET /adultHome': 'AdultController.home',
 /**
 * KID ROUTES
 */

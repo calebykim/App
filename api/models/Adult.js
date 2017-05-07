@@ -8,7 +8,6 @@ module.exports = {
   attributes: {
     email:{
       type: 'string',
-      unique: true,
       required: true
     },
     first_name: {
@@ -21,14 +20,6 @@ module.exports = {
     },
     encryptedPassword:{
       type: 'string'
-    },
-    savings_balance:{
-      type: 'float',
-      defaultsTo: 0.00
-    },
-    checking_balance:{
-      type: 'float',
-      defaultsTo: 0.00
     },
     family: {
       model: 'family'

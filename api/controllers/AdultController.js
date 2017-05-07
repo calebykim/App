@@ -1,16 +1,26 @@
 /**
  * AdultController
- *
- * @description :: Server-side logic for managing adults
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 module.exports = {
 
-  show: function (req, res) {
-    var adult = Adult.findOne({id: req.params.id });
+  home: function(req, res, next) {
+    Adult.findOne({id:req.session.Adult.id})
+      .populate('family')
+      .then(function(adult){
+        adult.family.id
+        
 
-    res.view('adults/show');
+      })
+      .catch(function(err){next(err)});
+    // get all kids of adult
+    // show balances for each kid
+    // show recent transactions for each kid
+
+
+    res.view('adults/homepage', {
+
+    });
   },
 
   edit: function (req, res) {

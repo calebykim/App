@@ -10,87 +10,115 @@ module.exports = {
 	// Auth for Adults //
 
 	adultSignup: function (req, res, next) {
-		Adult.create( req.params.all(), function adultCreated(err, adult) {
+		Adult.create(req.params.all()).exec(function(err, adult) {
 			if (err) return next(err);
 
 			req.session.authenticated = true;
 			req.session.Adult = adult;
 
-			Family.create({name: adult.last_name}, function familyCreated(err, family) {
-				if (err) return next(err);
-				family.adults.add(adult);
-				family.save(function(err){});
-			});
-			
-			res.redirect('/');
+			Family.findOrCreate({email: adult.email}, {
+				email: adult.email
+			})
+				.populate('adults')
+				.exec(function(err, family) {
+					if (err) return next(err);
+
+					family.adults.add(adult);
+					family.save(function(err){return next(err)});
+
+					res.redirect('/');
+				});
 		});
 	},
 
 	adultLogin: function (req, res, next) {
-		var reqEmail = req.param('email');
-		var reqPassword = req.param('password');
+		var reqEmail = req.body.email;
+		var reqPassword = req.body.password;
+		var firstName = req.body.first_name;
 		var emailValidated = validator.isEmail(reqEmail);
 
 		if (emailValidated && reqPassword) {
-			Adult.findOne({email: reqEmail}, function(err, adult) {
+			Adult.findOne({email: reqEmail, first_name: firstName})
+				.exec(function(err, adult) {
+					if (err) return next(err);
 
-				bcrypt.compare(reqPassword, adult.encryptedPassword, function(err, isMatch) {
-		      if (err) console.error;
+					bcrypt.compare(reqPassword, adult.encryptedPassword, function(err, isMatch) {
+			      if (err) return next(err);
 
-					if (isMatch) {
-						req.session.authenticated = true;
-						req.session.Adult = adult;
-						res.redirect('/adultHome');
-					} else {
-						res.redirect('/adultLogin');
-					};
-		    });
-			});
+						if (isMatch) {
+							req.session.authenticated = true;
+							req.session.Adult = adult;
+							res.redirect('/');
+						} else {
+							// set flashmessage
+							res.redirect('/adultLogin');
+						};
+			    });
+				});
 		};
-	},
-
-	adultLogout: function (req, res) {
-		req.session.destroy(function(err) {
-    	return res.redirect('/');
-    });
 	},
 
 	// Auth for Kids //
 
 	kidSignup: function (req, res, next) {
-		Kid.create(req.params.all(), function kidCreated(err, kid) {
-			if (err) return next(err);
+		var parent_email = req.body.parent_email,
+				first_name = req.body.first_name,
+				last_name = req.body.last_name,
+				password = req.body.password,
+				password_confirmation = req.body.password_confirmation;
 
-			req.session.authenticated = true;
-			req.session.Kid = kid;
-			res.redirect('/kidHome');
-		});
+		// find parent/family email first
+		Family.findOne({email:parent_email})
+			.populate('kids')
+			.then(function(family) {
+
+				Kid.create({
+					email: parent_email,
+					first_name: first_name,
+					last_name: last_name,
+					password: password,
+					password_confirmation: password_confirmation
+				})
+					.then(function(kid){
+						req.session.authenticated = true;
+						req.session.Kid = kid;
+
+						family.kids.add(kid.id);
+						family.save(function(err){return next(err)});
+
+						res.redirect('/');
+					})
+					.catch(function(err){return next(err)});
+			})
+			.catch(function(err){return next(err)});
 	},
 
 	kidLogin: function (req, res, next) {
-		var reqEmail = req.param('email');
-		var reqPassword = req.param('password');
+		var reqEmail = req.body.email;
+		var firstName = req.body.first_name;
+		var reqPassword = req.body.password;
 		var emailValidated = validator.isEmail(reqEmail);
 
 		if (emailValidated && reqPassword) {
-			Kid.findOne({email: reqEmail}, function(err, kid) {
+			Kid.findOne({email: reqEmail, first_name: firstName})
+				.exec(function(err, kid) {
+					bcrypt.compare(reqPassword, kid.encryptedPassword, function(err, isMatch) {
+						if (err) return next(err);
 
-				bcrypt.compare(reqPassword, kid.encryptedPassword, function(err, isMatch) {
-					if (err) console.error;
+						if (isMatch) {
+							req.session.authenticated = true;
+							req.session.Kid = kid;
 
-					if (isMatch) {
-						req.session.authenticated = true;
-						req.session.Kid = kid;
-						res.redirect('/kidHome');
-					} else {
-						res.redirect('/kidLogin');
-					};
+							res.redirect('/');
+						} else {
+							res.redirect('/kidLogin');
+						};
+					});
 				});
-			});
 		};
 	},
 
-	kidLogout: function (req, res) {
+	logout: function (req, res) {
 		req.session.destroy(function(err) {
     	return res.redirect('/');
     });

@@ -24,14 +24,6 @@ module.exports = {
       type: 'string',
       required: true
     },
-    savings_balance:{
-      type: 'float',
-      defaultsTo: 0.00
-    },
-    checking_balance:{
-      type: 'float',
-      defaultsTo: 0.00
-    },
     family: {
       model: 'family'
     },
@@ -44,10 +36,7 @@ module.exports = {
   },
 
   beforeCreate: function(params, next) {
-    Adult.findOneByEmail(params['parent_email']).exec(function(err,adult) {
-      adult.verifyKid(params['email']);
-    });
-
+    
     if (params['password'] == params['password_confirmation']) {
       bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
         if (err) return next(err);
