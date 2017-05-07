@@ -1,5 +1,5 @@
 module.exports.routes = {
-  '/': {view: 'Auth/index'},
+  '/': 'HomepageController.correctPage',
 
       // static pages
   'GET /ourWhat': {view: 'miscellaneous/what_we_do'},
