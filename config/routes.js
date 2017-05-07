@@ -1,6 +1,5 @@
 module.exports.routes = {
-  '/': 'HomepageController.correctPage',
-  '/auth/index': {view: 'Auth/index'},
+  '/': {view: 'Auth/index'},
 
       // static pages
   'GET /ourWhat': {view: 'miscellaneous/what_we_do'},
