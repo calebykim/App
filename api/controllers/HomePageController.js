@@ -10,7 +10,7 @@ module.exports = {
       next();
     }
     else {
-      res.redirect('/auth/index')
+      res.view('Auth/index')
       next();
     };
   }

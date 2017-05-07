@@ -1,6 +1,5 @@
 module.exports.routes = {
   '/': 'HomepageController.correctPage',
-  '/auth/index': {view: 'Auth/index'},
 
       // static pages
   'GET /ourWhat': {view: 'miscellaneous/what_we_do'},
@@ -56,11 +55,6 @@ module.exports.routes = {
   'GET /families/:id/edit': 'FamilyController.edit',
   'POST /famlies': 'FamilyController.create',
   'PUT /families/:id': 'FamilyController.update',
-  // transactions
-  'GET /transactions/new': 'TransactionController.new',
-  'GET /transactions/:id': 'TransactionController.show',
-  'POST /transactions': 'TransactionController.create',
-
   // Deposit
   'GET /deposits/new': 'DepositController.new',
   'POST /deposits': 'DepositController.create',
