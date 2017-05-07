@@ -1,40 +1,26 @@
-.container{
-   background-color: rgba(72, 209, 204, 0.46);
-   background-image: url("/images/legs.jpg");
-    background-position: top;
-   height: 100vh;
-  font-family: "Open Sans", "Myriad Pro", Arial, sans-serif;
-}
-
-#roundInput{
-  border-radius: 8px;
-}
-#roundButton{
-  border-radius: 8px;
-  font-size:15px;
-}
-#signUpButton{
-  font-size: 20px;
-}
-label{
-  color: white;
-}
-.translucent-form-overlay {
-  font-size: 20px;
-  border-radius: 10px;
-  max-width: 500px;
+body {
+  position: relative;
   width: 100%;
-  background-color: rgba(54, 54, 54, 0.41);
-  padding: 10px;
-  color: #fefefe;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  min-height: 100%;
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1500,w_2000,f_auto,q_auto/v1/1084130/hero-3_f9kwmt.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333;
 }
 
-#kSign{
-  background-color: rgba(255, 174, 0, 0.55);
+.form-container {
+  background-color: rgba(220, 220, 220, .7);
+  padding: 30px 30px;
+  border-radius: 5px;
 }
-
-

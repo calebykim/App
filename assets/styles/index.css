@@ -1,21 +1,43 @@
-body, 
-html {
-	/* we need to target body to make it go 100%*/
-	min-height: 100%;
-}
-
 body {
-	background-image: url("/images/legs-dim.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1500,w_2000,f_auto,q_auto/v1/1084130/hero-3_f9kwmt.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333;
 }
 
-header::after {
-	content: "";
-	display: table;
-	clear: both;
+.homepage-text {
+  color: white;
 }
 
+.homepage-text h1 {
+  font-family: titleFont;
+  font-size: 43px;
+}
+
+.homepage-text p {
+  font-family: subTitle;
+  font-size: 20px;
+}
+
+.homepage-text > div {
+	margin-top: 30px;
+}
+
+/*
 .container {
 	width: 100%;
 	margin: 0 auto;
@@ -37,7 +59,6 @@ nav ul {
 
 nav li {
 	display: inline-block;
-	/*margin-left: 70px;*/ /* space between each li element*/
 	margin-right: 110px;
 	padding-top: 25px;
 }
@@ -62,7 +83,6 @@ nav a:hover {
 	font-family: "Amatic SC", cursive;
 	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
 	margin: 40px auto; 
-	/* 40 pixels on the top and auto margins for left andright */
 	text-align: center;
 	font-weight: bold; 
 
@@ -78,6 +98,5 @@ nav a:hover {
 	font-family: "Amatic SC", cursive;
 	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
 	margin: 40px auto; 
-	/* 40 pixels on the top and auto margins for left andright */
 	text-align: center;
-}
+}*/
