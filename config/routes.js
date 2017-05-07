@@ -2,6 +2,11 @@ module.exports.routes = {
   '/': 'HomepageController.correctPage',
   '/auth/index': {view: 'Auth/index'},
 
+      // static pages
+  'GET /ourWhat': {view: 'miscellaneous/what_we_do'},
+  'GET /ourFAQ': {view: 'miscellaneous/FAQ'},
+  'GET /termsOfUse': {view: 'miscellaneous/Terms'},
+
 /**
 * ADULT AUTH
 */
@@ -23,8 +28,6 @@ module.exports.routes = {
   'POST /kidLogin': 'AuthController.kidLogin',
   'POST /kidSignup': 'AuthController.kidSignup',
   '/kidLogout': 'AuthController.kidLogout',
-  'GET /ourWhat': {view: 'miscellaneous/what_we_do'},
-  'GET /ourFAQ': {view: 'miscellaneous/FAQ'},
 
 
 /**
@@ -64,4 +67,5 @@ module.exports.routes = {
   // Transfer
   'GET /transfers/new': 'TransferController.new',
   'POST /transfers': 'TransferController.create'
+
 };

@@ -40,26 +40,25 @@
       <header class='header-normal'>
         <a href='/'><img src="<%= logoText %>"></img></a>
         <div>
-        <span>Welcome </span>
-            <a class='header-username' href='/'>
-              <%= req.session.Adult.first_name %>
-              <%= req.session.Adult.last_name %>
-            </a>
-            <span> ! </span>
-            <a href='/adultLogout'>Logout</a>
+          <span>Welcome </span>
+          <a class='header-username' href='/'>
+            <%= req.session.Adult.first_name %>
+            <%= req.session.Adult.last_name %>
+          </a>
+          <span> ! </span>
+          <a href='/adultLogout'>Logout</a>
         </div>
       </header>
     <% } else if (req.session.Kid) { %>
-      <div class="top-bar">
-        <div class="top-bar-title"><img src="<%= logoText %>"></img></div>
+      <header class='header-normal'>
+        <a href='/'><img src="<%= logoText %>"></img></a>
         <div>
-          <div class="top-bar-left"></div>
-          <div class="top-bar-right">
-            <a href='/'><%= req.session.Kid.email %></a>
-            <a href='/adultLogout'>Logout</a>
-          </div>
+          <span> Welcome </span>
+          <a class='header-username' href='/'><%= req.session.Kid.email %></a>
+          <span> ! </span>
+          <a href='/kidLogout'>Logout</a>
         </div>
-      </div>
+      </header>
     <% } %>
 
 
