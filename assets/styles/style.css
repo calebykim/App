@@ -148,11 +148,11 @@ input[type='password']
   margin-top: 40px;
 }*/
 
-.termsofuse, .transfer, .tracking{
+.transfer, .tracking{
   text-align: center;;
 }
 
-.register-child{
+/*.register-child{
   position: relative;
   width: 100%;
   height: 100vh;
@@ -163,7 +163,7 @@ input[type='password']
   justify-content: center;
   text-align: center;
   color: #333;
-}
+}*/
 
 /*.dashboard > .menu a {
   text-decoration: none;
@@ -175,9 +175,9 @@ input[type='password']
   color: black;
 }*/
 
-.register-child > div {
+/*.register-child > div {
   margin-top: 200px;
-}
+}*/
 
 /*.menu {
   width: 80%;

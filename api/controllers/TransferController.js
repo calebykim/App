@@ -27,7 +27,14 @@ module.exports = {
 				balances: response.data
 			});
 		})
-		.catch(function(err){next(err)});
+		.catch(function(err){
+			console.log(err);
+			if (err.code === 'ECONNREFUSED') {
+				res.view('Transfer/notActivated');
+			} else {
+				next(err)
+			}
+		});
   },
 
   create: function (req, res, next) {
