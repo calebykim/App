@@ -2,25 +2,172 @@
 <link rel="stylesheet" href="/styles/style.css">
 <link rel="stylesheet" href="/styles/kidHome.css">
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script> 
+
 
 <div class="container">
-	<div id="transferfunds">
-		<a href='/transfers/new'>
-			<img id ="transfersimage" src='/images/transfer.png' /><br/>
-			<h4 id = "transferstext" > Transfer Funds</h4>
-		</a>
-	</div >
 
-	<div id="highchartthing" style="width: 550px; height: 400px; margin: 0 auto">
-		
+	<div class="row">
+    <div class="large-centered columns">
+      <div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+      <div id="container"></div>
 
-	</div>
+    </div>
+  </div >
+
+  <div class="row">
+
+  <div class="large-4 small-centered columns">
+      <a href='/transfers/new'>
+        <img id ="transfersimage" src='/images/transfer.png' /><br/>
+        <h4 id = "transferstext" > Transfer Funds</h4>
+      </a>
+    </div>
+  </div>
 </div>
 
 
+<%var money = [] %>
+<%var time = [] %>
+<%var amount = [] %>
+<%var trans = transactions %>
+
+<%for(var i in trans){ %>
+  <%money.push(trans[i].runningBalance)%>
+  <%time.push(trans[i].createdAt)%>
+  <%amount.push(trans[i].amount)%>
+
+<%}%>
+<%var balances = JSON.stringify(money)%>
+<%var times = JSON.stringify(time)%>
+<%var amounts = JSON.stringify(amount)%>
 
 
 
-<!-- -->
+<script>
+  $("#trans").hide();
+  console.log(<%=balances%>);
+  console.log("<%=amounts%>");
+
+  var pos = 0;
+  var neg = 0;
+  for(var i in "<%=amounts%>"){
+      if("<%=amounts%>"[i] > 0){
+          pos++;
+      }else{
+          neg++;
+      }
+  }
+
+  var times = "<%=times%>";
+  times = times.replace(/&quot;/g, "");
+  times = times.replace('[', "").replace(']', "");
+  console.log(times);
+  var array  = times.split(",");
+  var dates = []
+  for(var x in array){
+      console.log("date ", new Date(array[x]));
+      dates.push(new Date(array[x]));
+  }
+  var balances = '<%=balances%>';
+  balances = balances.replace('[', "").replace(']', "");
+  balances = balances.split(",")
+  var data = []
+  for(var y in balances){
+      data.push(parseInt(balances[y]))
+
+  }
+
+
+
+
+  var start = new Date(Math.min.apply(null, dates));
+  var intervalUnits = 24 * 3600 * 1000;
+
+
+
+  Highcharts.chart('container2', {
+      title: {
+        text: 'My Balance'
+      },
+      xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+          hour: '%H:%M'
+        }
+      },
+      colors: ['rgb(255, 136, 84)', 'rgb(114, 208, 255)', 'rgba(255,255,255, .75)', '#6cf7d7' ],
+      yAxis: {
+        title: {
+          text: 'Balance'
+        },
+        label:{
+            format: '$ {value}'
+        }
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+      },
+      series: [
+        {
+          name: 'Balance',
+          pointStart: Date.UTC(start.getFullYear(), start.getMonth(), start.getDate()),
+          data: data,
+          pointInterval: intervalUnits
+        }
+      ]
+});
+
+
+  Highcharts.chart('container', {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: 0,
+      plotShadow: false
+    },
+    colors: ['rgb(255, 136, 84)', 'rgb(114, 208, 255)', 'rgba(255,255,255, .75)', '#6cf7d7' ],
+
+    title: {
+      text: 'Income vs Outcome',
+      align: 'center',
+      verticalAlign: 'middle',
+      y: -125
+    },
+    tooltip: {
+      pointFormat: '<b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+      pie: {
+        dataLabels: {
+          enabled: true,
+          distance: -50,
+          style: {
+            fontWeight: 'bold',
+            color: 'white'
+          }
+        },
+        startAngle: -90,
+        endAngle: 90,
+        center: ['50%', '75%']
+      }
+    },
+    series: [{
+      type: 'pie',
+      innerSize: '50%',
+      data: [
+        ['Income',   pos],
+        ['Outcome',       neg],
+        {
+          dataLabels: {
+            enabled: false
+          }
+        }
+      ]
+    }]
+  });
+
+</script>

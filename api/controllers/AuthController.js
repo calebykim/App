@@ -122,31 +122,29 @@ module.exports = {
 		var firstName = req.body.first_name;
 		var reqPassword = req.body.password;
 
-		if (emailValidated && reqPassword) {
-			Kid.findOne({email: reqEmail, first_name: firstName})
-				.exec(function(err, kid) {
-					bcrypt.compare(reqPassword, kid.encryptedPassword, function(err, isMatch) {
-						if (err) return next(err);
+		Kid.findOne({email: reqEmail, first_name: firstName})
+			.exec(function(err, kid) {
+				bcrypt.compare(reqPassword, kid.encryptedPassword, function(err, isMatch) {
+					if (err) return next(err);
 
-						if (!kid) {
-							req.session.flash = {
-								error: "No kid found"
-							}
-							res.redirect('/kidLogin');
-							return;
+					if (!kid) {
+						req.session.flash = {
+							error: "No kid found"
 						}
+						res.redirect('/kidLogin');
+						return;
+					}
 
-						if (isMatch) {
-							req.session.authenticated = true;
-							req.session.Kid = kid;
+					if (isMatch) {
+						req.session.authenticated = true;
+						req.session.Kid = kid;
 
-							res.redirect('/');
-						} else {
-							res.redirect('/kidLogin');
-						};
-					});
+						res.redirect('/');
+					} else {
+						res.redirect('/kidLogin');
+					};
 				});
-		};
+			});
 	},
 
 	logout: function (req, res) {
