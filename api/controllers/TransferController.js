@@ -76,14 +76,12 @@ module.exports = {
 	    from: from,
 	    to: to,
 			amount: amount
-	  })
-		  .then(function (response) {
-				// DO SOMETHING WITH RESPONSE
-		    console.log(response.data);
-
-				res.redirect('/');
-		  })
-		  .catch(function(err) { return next(err) });
+	})
+	.then(function (response) {
+	// DO SOMETHING WITH RESPONSE
+    console.log(response.data);
+	})
+	.catch(function(err) { return next(err) });
 
   }
 
