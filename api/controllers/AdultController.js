@@ -13,6 +13,9 @@ module.exports = {
       .populate('kids')
       .exec(function(err,family) {
         
+        bankAPI.get('/account/balances', {
+          params: family.email
+        })
       })
     // get all kids of adult
     // show balances for each kid
