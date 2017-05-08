@@ -73,7 +73,7 @@ module.exports = {
 	// Auth for Kids //
 
 	kidNewSignup: function(req,res) {
-		res.redirect('Auth/Kid/Signup')
+		res.view('Auth/Kid/Signup')
 	},
 
 	kidSignup: function (req, res, next) {
@@ -110,7 +110,7 @@ module.exports = {
 	},
 
 	kidNewLogin: function(req,res) {
-		res.redirect('Auth/Kid/Login')
+		res.view('Auth/Kid/Login')
 	},
 
 	kidLogin: function (req, res, next) {

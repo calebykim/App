@@ -21,7 +21,7 @@ module.exports.routes = {
 * KID AUTH
 */
   // Login
-  'GET /KidLogin': 'AuthController.kidNewLogin',
+  'GET /kidLogin': 'AuthController.kidNewLogin',
   'POST /kidLogin': 'AuthController.kidLogin',
 
   // Signup
