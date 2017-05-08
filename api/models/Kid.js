@@ -32,6 +32,9 @@ module.exports = {
 
     	var myIndex = allKids.indexOf(this);
     	return kids.splice(myIndex, 1) || [];
+    },
+    fullName: function() {
+      return this.first_name + " " + this.last_name;
     }
   },
 

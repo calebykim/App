@@ -34,6 +34,9 @@ module.exports = {
         kids = [];
       }
       return kids;
+    },
+    fullName: function() {
+      return this.first_name + " " + this.last_name;
     }
   },
 
