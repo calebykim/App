@@ -3,35 +3,20 @@
 <link rel="stylesheet" href="/styles/style.css">
 <link rel="stylesheet" href="/styles/adultHome.css">
 
-<!-- <div className = 'menu'>
-	<div>
-		<Link to='/register-child'>
-			<img src='public/img/reg_kid.png' />
-			<h4>Register a Child</h4>
-		</Link>
-	</div>
-	<div>
-		<Link to='/transfer'>
-			<img src='public/img/transfer.png' />
-			<h4>Make a Transfer</h4>
-		</Link>
-	</div>
-	<div>
-		<Link to='/history'>
-			<img src='public/img/tracking.png' />
-			<h4>Track Account History</h4>
-		</Link>
-	</div>
-</div> -->
+
 
 <div class="container">
-	<div>
-		<a href='/transfers/new'>
-			<img src='/images/transfer.png' /><br/>
-			<h4>Transfer Funds</h4>
-		</a>
-	</div>
-	<div>
+		<% kids.forEach(function(kidInfo) { %>
+				<div>
+					<ul>
+						<li><%= kidInfo.type %></li>
+						<li><%= kidInfo.number %></li>
+						<li><%= kidInfo.balance %></li>
+						<li><%= kidInfo.holderName %></li>
+						<ul>
+				</div>
+		<% }) %>
+	<!-- <div>
 		<a href='/families/<%=currentAdult.family%>'>
 			<img src='/images/reg_kid.png' />
 			<h4>My Family</h4>
@@ -39,7 +24,5 @@
 	</div>
 	<div>
 		<a ><img src='/images/tracking.png' /><h4>Settings</h4></a>
-	</div>
+	</div> -->
 </div>
-
-<!-- -->

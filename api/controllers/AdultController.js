@@ -9,20 +9,42 @@ var bankAPI = require('axios').create({
 module.exports = {
 
   home: function(req, res, next) {
-    Family.findOne({ email: req.session.Adult.email })
-      .populate('kids')
-      .exec(function(err,family) {
-        
-        bankAPI.get('/account/balances', {
-          params: family.email
-        })
-      })
-    // get all kids of adult
-    // show balances for each kid
-    // show recent transactions for each kid
-    res.view('adults/homepage', {
+    var email = req.session.Adult.email,
+        fullName = req.session.Adult.first_name+' '+req.session.Adult.last_name;
 
-    });
+		Family.findOne({email:email})
+			.populate('kids')
+			.then(function(family){
+
+				bankAPI.get('/account/balances', {
+					params: {
+						email: email
+					}
+				})
+				.then(function(response) {
+					var kids = [], myAccount = {};
+
+					response.data.forEach(function(account) {
+						if (account.holderName == fullName) {
+							myAccount = account
+						} else {
+							kids.push(account)
+						}
+					});
+
+					res.view('adults/homepage', {
+						myAccount: myAccount,
+						kids: kids
+					});
+				})
+				.catch(function(err){
+					console.log(err);
+					res.redirect('adults/homepage');
+				});
+
+			})
+			.catch(function(err) {return next(err)});
+
   },
 
   edit: function (req, res) {
