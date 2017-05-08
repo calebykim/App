@@ -64,6 +64,10 @@ module.exports = {
 						res.redirect('/');
 					} else {
 						// set flashmessage
+						req.session.flash = {
+							error: "Wrong password, please try again."
+						}
+
 						res.redirect('/adultLogin');
 					};
 		    });

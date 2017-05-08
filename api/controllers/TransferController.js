@@ -57,7 +57,9 @@ module.exports = {
 				// DO SOMETHING WITH RESPONSE
 		    console.log(response.data);
 
-				res.redirect('/');
+			req.session.flash = {
+				test:'test!'
+			}
 		  })
 		  .catch(function(err) { return next(err) });
 
