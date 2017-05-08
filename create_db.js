@@ -9,7 +9,7 @@ dbconn.connect(function(err){
     console.log('Database connection error');
   }else{
     console.log('Database connection successful');
-    dbconn.query("CREATE DATABASE finnest_db", function(error){
+    dbconn.query("CREATE DATABASE bank_db", function(error){
       if(error){
         console.log(error + " creating database failed");
       }else{
