@@ -15,8 +15,26 @@
 .account-info {
 	padding-top: 30px;
 	text-align: left;
-	width: 300px;
+	width: 400px;
 	margin: 0 auto;
+}
+
+select {
+	height: 40px;
+  width: 400px;
+  margin:10px auto;
+  border-radius: 4px;
+}
+
+#amount {
+  width: 400px;
+}
+
+label {
+	text-align: left;
+	width: 400px;
+	margin: 0 auto;
+	padding-left: 10px;
 }
 
 h4 {
@@ -24,4 +42,16 @@ h4 {
 	font-family: titleFont;
 	color: #e56c40;
 	margin-bottom: 30px;
+}
+
+#first-line {
+	margin-top: 40px;
+}
+
+h5 {
+	font-family: subTitle;
+}
+
+a {
+	color: #e56c40;
 }

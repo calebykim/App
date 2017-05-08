@@ -2,22 +2,24 @@
  * AdultController
  */
 
+var bankAPI = require('axios').create({
+	baseURL: sails.config.bankApi.baseURL
+});
+
 module.exports = {
 
   home: function(req, res, next) {
-    Adult.findOne({id:req.session.Adult.id})
-      .populate('family')
-      .then(function(adult){
-        adult.family.id
+    Family.findOne({ email: req.session.Adult.email })
+      .populate('kids')
+      .exec(function(err,family) {
         
-
+        bankAPI.get('/account/balances', {
+          params: family.email
+        })
       })
-      .catch(function(err){next(err)});
     // get all kids of adult
     // show balances for each kid
     // show recent transactions for each kid
-
-
     res.view('adults/homepage', {
 
     });
