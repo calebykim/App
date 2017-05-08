@@ -121,7 +121,6 @@ module.exports = {
 		var reqEmail = req.body.email;
 		var firstName = req.body.first_name;
 		var reqPassword = req.body.password;
-		var emailValidated = validator.isEmail(reqEmail);
 
 		if (emailValidated && reqPassword) {
 			Kid.findOne({email: reqEmail, first_name: firstName})

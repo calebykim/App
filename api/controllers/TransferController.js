@@ -69,8 +69,12 @@ module.exports = {
 		};
 
 		to.email = from.email; // family member has same email
-		to.name = req.body.to;
+		from.type = req.body.fromType;
 		var amount = req.body.amount;
+
+		var nameAndtype = req.body.to.split(',');
+		to.name = nameAndtype[0];
+		to.type = nameAndtype[1];
 
     bankAPI.post('/transaction/transfer', {
 	    from: from,
@@ -79,7 +83,7 @@ module.exports = {
 	})
 	.then(function (response) {
 	// DO SOMETHING WITH RESPONSE
-    console.log(response.data);
+		res.redirect('/');
 	})
 	.catch(function(err) { return next(err) });
 
