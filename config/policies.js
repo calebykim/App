@@ -1,4 +1,6 @@
 module.exports.policies = {
+  '*': 'flashMessages',
+
   AdultController: {
     show: 'isRequestedAdult',
     edit: 'isRequestedAdult',
@@ -15,11 +17,6 @@ module.exports.policies = {
     show: 'isFamilyMember',
     edit: ['isAdult', 'isFamilyMember'],
     update: ['isAdult', 'isFamilyMember']
-  },
-  TransactionController: {
-    new: 'sessionAuth'
-    // create: ['hasSufficientFunds', 'isPartOfTransaction'],
-    // show: ['isFamilyMember', 'isPartOfTransaction']
   },
   DepositController: {
     '*': 'sessionAuth'

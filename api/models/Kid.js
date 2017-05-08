@@ -36,7 +36,6 @@ module.exports = {
   },
 
   beforeCreate: function(params, next) {
-    
     if (params['password'] == params['password_confirmation']) {
       bcrypt.hash(params.password, 10, function isEncrypted(err, encryptedPassword) {
         if (err) return next(err);

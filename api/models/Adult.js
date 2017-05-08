@@ -34,9 +34,6 @@ module.exports = {
         kids = [];
       }
       return kids;
-    },
-    verifyKid: function(kid_email) {
-      return true // for debugging purposes
     }
   },
 

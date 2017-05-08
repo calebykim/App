@@ -9,21 +9,23 @@ module.exports.routes = {
 /**
 * ADULT AUTH
 */
-  // static pages
-  'GET /adultLogin': {view: 'Auth/Adult/login'},
-  'GET /adultSignup': {view: 'Auth/Adult/signup'},
-  // controller requests
+  // Login
+  'GET /adultLogin': 'AuthController.adultNewLogin',
   'POST /adultLogin': 'AuthController.adultLogin',
+
+  // Signup
+  'GET /adultSignup': 'AuthController.adultNewSignup',
   'POST /adultSignup': 'AuthController.adultSignup',
 
 /**
 * KID AUTH
 */
-  // static pages
-  'GET /kidLogin': {view: 'Auth/Kid/login'},
-  'GET /kidSignup': {view: 'Auth/Kid/signup'},
-  // controller requests
+  // Login
+  'GET /KidLogin': 'AuthController.kidNewLogin',
   'POST /kidLogin': 'AuthController.kidLogin',
+
+  // Signup
+  'GET /kidSignup': 'AuthController.kidNewSignup',
   'POST /kidSignup': 'AuthController.kidSignup',
 
   '/logout': 'AuthController.logout',

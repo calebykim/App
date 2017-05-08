@@ -2,12 +2,15 @@
  * AuthController
  */
 
-var validator = require('validator');
 var bcrypt = require('bcrypt');
 
 module.exports = {
 
-	// Auth for Adults //
+// Auth for Adults //
+
+	adultNewSignup: function(req,res) {
+		res.view('Auth/Adult/Signup');
+	},
 
 	adultSignup: function (req, res, next) {
 		Adult.create(req.params.all()).exec(function(err, adult) {
@@ -31,34 +34,47 @@ module.exports = {
 		});
 	},
 
+	adultNewLogin: function(req,res) {
+		res.view('Auth/Adult/Login');
+	},
+
 	adultLogin: function (req, res, next) {
 		var reqEmail = req.body.email;
 		var reqPassword = req.body.password;
 		var firstName = req.body.first_name;
-		var emailValidated = validator.isEmail(reqEmail);
 
-		if (emailValidated && reqPassword) {
-			Adult.findOne({email: reqEmail, first_name: firstName})
-				.exec(function(err, adult) {
+		Adult.findOne({email: reqEmail, first_name: firstName})
+			.exec(function(err, adult) {
+				if (err) return next(err);
+
+				if (!adult) {
+					req.session.flash = {
+						error: "No adult found"
+					}
+					res.redirect('/adultLogin');
+					return;
+				}
+
+				bcrypt.compare(reqPassword, adult.encryptedPassword, function(err, isMatch) {
 					if (err) return next(err);
 
-					bcrypt.compare(reqPassword, adult.encryptedPassword, function(err, isMatch) {
-			      if (err) return next(err);
-
-						if (isMatch) {
-							req.session.authenticated = true;
-							req.session.Adult = adult;
-							res.redirect('/');
-						} else {
-							// set flashmessage
-							res.redirect('/adultLogin');
-						};
-			    });
-				});
-		};
+					if (isMatch) {
+						req.session.authenticated = true;
+						req.session.Adult = adult;
+						res.redirect('/');
+					} else {
+						// set flashmessage
+						res.redirect('/adultLogin');
+					};
+		    });
+			});
 	},
 
 	// Auth for Kids //
+
+	kidNewSignup: function(req,res) {
+		res.redirect('Auth/Kid/Signup')
+	},
 
 	kidSignup: function (req, res, next) {
 		var parent_email = req.body.parent_email,
@@ -93,6 +109,10 @@ module.exports = {
 			.catch(function(err){return next(err)});
 	},
 
+	kidNewLogin: function(req,res) {
+		res.redirect('Auth/Kid/Login')
+	},
+
 	kidLogin: function (req, res, next) {
 		var reqEmail = req.body.email;
 		var firstName = req.body.first_name;
@@ -104,6 +124,14 @@ module.exports = {
 				.exec(function(err, kid) {
 					bcrypt.compare(reqPassword, kid.encryptedPassword, function(err, isMatch) {
 						if (err) return next(err);
+
+						if (!kid) {
+							req.session.flash = {
+								error: "No kid found"
+							}
+							res.redirect('/kidLogin');
+							return;
+						}
 
 						if (isMatch) {
 							req.session.authenticated = true;

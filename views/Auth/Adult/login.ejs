@@ -10,6 +10,13 @@
 </header>
 
 <div class = "main-container form-container">
+
+  <% if (flash && flash.error) { %>
+    <div class="callout warning">
+      <p><%= flash.error %></p>
+    </div>
+  <% } %>
+
   <form action="/adultLogin" method="POST">
     <h4 class="text-center">Adult Log In</h4>
     <input name="email" type="email" placeholder="Email" required="required" />
