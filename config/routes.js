@@ -37,7 +37,7 @@ module.exports.routes = {
 /**
 * KID ROUTES
 */
-  'GET /kidHome': {view: 'kids/homepage'},
+  'GET /kidHome': 'KidController.home',
 
 /**
 * REST routes
