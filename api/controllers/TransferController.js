@@ -83,7 +83,13 @@ module.exports = {
 	})
 	.then(function (response) {
 	// DO SOMETHING WITH RESPONSE
-		res.redirect('/');
+		// res.redirect('/');
+		// console.log(response.data);
+		res.view('Transfer/success', {
+              receiver: response.data.recipient.holderName,
+              amount:response.data.transfer.amount,
+              currentBalance: response.data.sender.balance
+            });
 	})
 	.catch(function(err) { return next(err) });
 

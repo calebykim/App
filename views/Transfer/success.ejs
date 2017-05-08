@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/styles/style.css">
+<link rel="stylesheet" href="/styles/transfer.css">
+
+<div class='main-container'>
+
+<h4>Send money to friends and family</h4>
+
+  <div class='shadowed-container'>
+    <h5 id = 'first-line'>
+      <span>$ <%= amount %></span> has been sent to <span><%= receiver %></span> successfully.
+    </h5>
+    <h5>
+      Current Balance: <a id='show-balance'>&nbsp;&nbsp;show</a>
+        <span id='balance'> &nbsp;$<%= currentBalance %></span>
+    </h5><br/><br/>
+    <a href='/'><h5>&lt;&lt; Back</h5></a>
+  </div>
+
+</div>
+
+<script src="/js/dependencies/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#balance').hide();
+    $('#show-balance').click (function(){
+      $('#show-balance').hide();
+      $('#balance').show();
+    });
+    $('#balance').click (function(){
+      $('#show-balance').show();
+      $('#balance').hide();
+    });
+  });
+</script>

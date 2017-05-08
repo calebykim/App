@@ -6,7 +6,7 @@
 <h4>Send money to friends and family</h4>
 
 <div class='shadowed-container'>
-    <div class='account-myAccount'>
+    <div class='account-myAccount account-info'>
       <p>
         <strong>My Account: </strong>
         <span><%= myAccount.type %></span>
@@ -37,7 +37,7 @@
   <input type='hidden' name='fromType' value='<%=myAccount.type%>'>
 
   <label for="">Amount: </label>
-  <input type="number" step="any" min='0.01' name="amount" placeholder="$0.00" required="required">
+  <input type="number" id='amount' step="any" min='0.01' name="amount" placeholder="$0.00" required="required">
   <input class='customized-button customized-button-orange' type='submit'>
 
   </form>

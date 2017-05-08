@@ -1,10 +1,72 @@
-.row{
-  padding-top: 100px;
+.main-container {
+	width: 80%;
+	margin-left: 10%;
 }
 
+.colomn-left {
+	vertical-align: top;
+	margin: 0;
+	width:34%;
+	display: inline-block;
+}
 
+.colomn-right {
+	margin: 0;
+	width:64%;
+	display: inline-block;
+}
 
-#transferstext {
-  margin-bottom: 100px;
-  text-align:center;
+.shadowed-container {
+	width:80%;
+	border:solid;
+  	border-width: 1px;
+  	border-color: rgb(230,230,230);
+  	border-radius: 4px;
+  	display: inline-block;
+  	padding-bottom: 50px;
+  	box-shadow: 0 0 3px rgba(220, 220, 220, 1);
+}
+
+.shadowed-container-left {
+	vertical-align: top;
+	margin-left: 20%;
+	margin-top: 10px;
+}
+
+.side-bar > h2 {
+	margin-left: 40px;
+	margin-top: 20px;
+	font-family: subTitle;
+}
+
+.sidebar-button > a > h4{
+	margin-top: 10px;
+	font-family: titleFont;
+	text-align: center;
+}
+
+.sidebar-button {
+	width: 70%;
+	margin-left: 15%;
+	text-align: center;
+}
+
+.sidebar-img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: .3s ease-in-out;
+}
+
+.shadowed-container-right{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#chart1, #chart2 {
+	min-width: 310px; 
+	height: 400px; 
+	max-width: 600px; 
+	margin: 0 auto
 }
