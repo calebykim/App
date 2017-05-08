@@ -12,15 +12,19 @@ body {
 .info-container > h1 {
 	font-family: titleFont;
 	color: 	#3FB1B8;
+
 }
 
 .info-container > h5 {
 	font-family: subTitle;
 	color: rgb(100,100,100);
+	background-color : #99FFCC;
+	border: 1px solid #008000;
 }
 
 .info-container > p {
 	font-family: subTitle;
+
 }
 
 
