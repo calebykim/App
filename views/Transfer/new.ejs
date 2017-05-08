@@ -6,31 +6,41 @@
 <h4>Send money to friends and family</h4>
 
 <div class='shadowed-container'>
-  <% balances.forEach(function(info) { %>
-    <div class='account-info'>
+    <div class='account-myAccount'>
       <p>
-        <strong>Your account: </strong>
-        <span><%= info.type %></span>
+        <strong>My Account: </strong>
+        <span><%= myAccount.type %></span>
         <span>********</span>
-        <span><%= info.number %></span>
+        <span><%= myAccount.number %></span>
       </p>
       <p>
         <strong>Balance: </strong>
         <a id='show-balance'>&nbsp;&nbsp;show</a>
-        <span id='balance'> &nbsp;$<%= info.balance %></span>
+        <span id='balance'> &nbsp;$<%= myAccount.balance %></span>
       </p>
     </div>
-  <% }) %>
 
   <form  action="/transfers" method="POST">
   <label for="to">To: </label>
-  <input type="email" name="to" placeholder="Email" required="required">
+  <select name='to' required>
+    <% kids.forEach(function(kidInfo) { %>
+      <option value="<%=kidInfo.holderName%>">
+        <strong><%=kidInfo.holderName%></strong>
+        <span><%= kidInfo.type %></span>
+        <span>********</span>
+        <span><%= kidInfo.number %></span>
+        <span>$<%= kidInfo.balance %></span>
+      </option>
+    <% }) %>
+  </select>
 
   <label for="">Amount: </label>
   <input type="number" name="amount" placeholder="$0.00" required="required">
   <input class='customized-button customized-button-orange' type='submit'>
 
   </form>
+
+
 </div>
 
 </div>
