@@ -9,11 +9,11 @@ dbconn.connect(function(err){
     console.log('Database connection error');
   }else{
     console.log('Database connection successful');
-    dbconn.query("CREATE DATABASE finnest_db", function(error){
+    dbconn.query("CREATE DATABASE bank_db", function(error){
       if(error){
         console.log(error + " creating database failed");
       }else{
-        console.log("finnest_db created successfully");
+        console.log("bank_db created successfully");
       }
       dbconn.end(function(error){
         if(error){
