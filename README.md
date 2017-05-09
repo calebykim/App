@@ -6,10 +6,11 @@
   3. run mySql server on localhost
   4. node create_db.js (creates finnest_db for application, only need to run once)
   5. sails lift (run application -> localhost:1337)
+  6. also have bank_api running (see below!!!)
 
 ## Bank_API (What is it?):
 
-  We have another app, BANK_API, simulate/pretend to be the bank API. This needs to be run at the same time as the finnest app. 
+  We have another app, BANK_API, simulate/pretend to be the bank API. This needs to be run at the same time as the finnest app.
 
 ## HOW TO RUN (BANK_API):
 
@@ -17,7 +18,7 @@
   2. npm install
   3. make sure mySql server is still running. 
   4. node create_bank_db.js
-  5. sails lift (localhost:3000)
+  5. sails lift (localhost:3000) <-- You can open it in a browser, but it's meant as debugging tool, and is only meant for eyes     of developers. 
 
 ## Built With
 
