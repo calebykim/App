@@ -1,5 +1,9 @@
 # Finnest
 
+## Overview
+  This app allows user registration and transactions. Parents sign up first, then kids can use a parent's e-mail to sign up. Please read "How to use" for a bit more information. 
+
+
 ## HOW TO RUN APP (FINNEST APP):
   1. npm install sails -g (if sails is not already installed)
   2. npm install (installs all necessary node_modules)
@@ -18,7 +22,19 @@
   2. npm install
   3. make sure mySql server is still running. 
   4. node create_bank_db.js
-  5. sails lift (localhost:3000) <-- You can open it in a browser, but it's meant as debugging tool, and is only meant for eyes     of developers. 
+  5. sails lift (localhost:3000) <-- You can open it in a browser, but it's meant as debugging tool, and is only meant for eyes of developers. 
+
+## How to use:
+
+  Because in reality a bank API would have to "talk" to our app, we've made a specific family that finnest can register. So who can be registered (see below)?
+
+## Who can be registered:
+  1. **Parent**. Homer (first name), Simpson (last name). E-mail:  homer_simpson@duffmail.net
+  2. **Parent**. Marge (first name), Simpson (last name). E-mail: homer_simpson@duffmail.net
+  3. **Child**. Lisa (first name), Simpson (last name). E-mail: homer_simpson@duffmail.net
+  4. **Child**. Bart (first name), Simpson (last name). E-mail: homer_simpson@duffmail.net
+  5. **Child**. Maggie (first name), Simpson (last name). E-mail: homer_simpson@duffmail.net
+  
 
 ## Built With
 
