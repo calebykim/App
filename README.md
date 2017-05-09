@@ -26,7 +26,7 @@
 
 ## How to use:
 
-  Because in reality a bank API would have to "talk" to our app, we've made a specific family that finnest can register. So who can be registered (see below)?
+When you're on the finnest app (localhost:1337) and registering users, there are a few guidelines. Because in reality a bank API would have to "talk" to our app, we've made a specific family that finnest can register. The names of the family members that can be registered are listed below. As for transactions, everything is quite intuitive and working. 
 
 ## Who can be registered:
   1. **Parent**. Homer (first name), Simpson (last name). E-mail:  homer_simpson@duffmail.net
