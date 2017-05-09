@@ -1,49 +1,99 @@
-body {
-	position: relative;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #333;
-}
-
-.container {
-	margin-top: 100px;
-	width: 80%;
-	display: flex;
-	padding-top: 120px;
-}
-
-.container a {
-  text-decoration: none;
-}
-
-.container > div > a > h4 {
- z-index: 9;
- margin-top: 40px;
-  font-size: 20px;
-  font-family: titleFont;
-  color: black;
-}
-
-.container > div {
-  width: 30%;
-  margin: 3%;
-  padding: 10px;
-}
-
-.container> div > a > img {
-  z-index: 10;
+.main-container {
   width: 80%;
-  height: 80%;
+  margin-left: 10%;
 }
 
-.container > div > a > img:hover {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+.colomn-left {
+  vertical-align: top;
+  margin: 0;
+  width:34%;
+  display: inline-block;
+}
+
+.colomn-right {
+  margin: 0;
+  width:64%;
+  display: inline-block;
+}
+
+.shadowed-container {
+  width:80%;
+  border:solid;
+    border-width: 1px;
+    border-color: rgb(230,230,230);
+    border-radius: 4px;
+    display: inline-block;
+/*  padding-bottom: 50px;*/
+    box-shadow: 0 0 3px rgba(220, 220, 220, 1);
+}
+
+/*.shadowed-container :not(.shadowed-container-right){
+  padding-bottom: 50px;
+}*/
+
+.shadowed-container-left {
+  vertical-align: top;
+  margin-left: 20%;
+  margin-top: 10px;
+  padding-bottom: 50px;
+}
+
+.side-bar > h2 {
+  margin-left: 40px;
+  margin-top: 20px;
+  font-family: subTitle;
+}
+
+.sidebar-button > a > h4{
+  margin-top: 10px;
+  font-family: titleFont;
+  text-align: center;
+}
+
+.sidebar-button {
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+}
+
+.sidebar-img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
   transition: .3s ease-in-out;
+}
+
+.shadowed-container-right{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+/*  height: 200px;*/
+}
+
+.head {
+  vertical-align: top;
+  margin-top: 20px;
+    display: inline-block;
+    width: 15%;
+    margin-left: 20px;
+}
+
+.head > img{
+  border-style: double;
+  border-width: 3px;
+  border-color: rgb(230,230,230);
+  border-radius: 50%;
+  outline: none;
+}
+
+.kid-info {
+  margin-top: 10px;
+  vertical-align: top;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+h5 {
+  font-family: subTitle;
+  font-weight: bold;
 }

@@ -3,22 +3,54 @@
 <link rel="stylesheet" href="/styles/style.css">
 <link rel="stylesheet" href="/styles/adultHome.css">
 
-<div class="container">
-	<div>
-		<a href='/transfers/new'>
-			<img src='/images/transfer.png' /><br/>
-			<h4>Transfer Funds</h4>
-		</a>
+
+
+
+
+<div class="main-container">
+
+	<div class="colomn-left">
+	<div class='shadowed-container-left shadowed-container side-bar'>
+	<h2>Hi, <span><%= req.session.Adult.first_name %></span> !</h2>
+		<div class='sidebar-button'>
+		  	<a href='/transfers/new'>
+		    	<img class ="sidebar-img" src='/images/transfer.png' /><br/>
+		    	<h4 id = "transferstext" > Transfer Funds</h4>
+	  		</a>
+	  	</div>
+	  </div>
 	</div>
-	<div>
-		<a href='/families/<%=currentAdult.family%>'>
-			<img src='/images/reg_kid.png' />
-			<h4>My Family</h4>
-		</a>
-	</div>
-	<div>
-		<a ><img src='/images/tracking.png' /><h4>Settings</h4></a>
-	</div>
+
+    <div class="colomn-right">
+		<% kids.forEach(function(kidInfo) { %>
+				<div class='shadowed-container-right shadowed-container'>
+					<div class='head'>
+						<img class='head-img' src='/images/head.jpg' />
+					</div>
+					<div class='kid-info'>
+						
+							<h5><%= kidInfo.holderName %></h5>
+							<p><strong>Account Summary : </strong></p>
+							<p><%= kidInfo.type %> ends in <%= kidInfo.number %></p>
+							<p>Balance: <a class='show-balance'>show</a><span class='balance'><%= kidInfo.balance %></span></p>
+						
+					</div>
+				</div>
+		<% }) %>
+    </div>
 </div>
 
-<!-- -->
+<script src="/js/dependencies/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.balance').hide();
+    $('.show-balance').click (function(){
+      $(this).hide();
+      $(this).next().show();
+    });
+    $('.balance').click (function(){
+      $(this).prev().show();
+      $(this).hide();
+    });
+  });
+</script>

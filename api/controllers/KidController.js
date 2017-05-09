@@ -20,11 +20,12 @@ module.exports = {
         })
           .then(function(response) {
             res.view('kids/homepage', {
-              transactions: response.data
+              transactions: response.data.transactions,
+              transfers: response.data.transfers
             });
           })
           .catch(function(err) {
-            
+
           })
 
       })
