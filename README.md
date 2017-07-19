@@ -1,12 +1,7 @@
 # Finnest
 
-## README's readme!
-
-Nate and Alberta told us that we need to have the DB running on a server to interact with it. But at the moment, we don't have permission to with the department machines. They said we will not be penalized for tech issues with the DB running on department machine servers. The demos work fine on non-CS department machines. They also said to make this issue clear in our readme (which we're doing here). 
-
 ## Overview
   This app allows user registration and transactions. Parents sign up first, then kids can use a parent's e-mail to sign up. Please read "How to use" for a bit more information. 
-
 
 ## HOW TO RUN APP (FINNEST APP):
   1. npm install sails -g (if sails is not already installed)
@@ -16,7 +11,7 @@ Nate and Alberta told us that we need to have the DB running on a server to inte
   5. sails lift (run application -> localhost:1337)
   6. also have bank_api running (see below!!!)
 
-## Bank_API (What is it?):
+## Bank_API:
 
   We have another app, BANK_API, simulate/pretend to be the bank API. This needs to be run at the same time as the finnest app.
 
@@ -51,6 +46,3 @@ When you're on the finnest app (localhost:1337) and registering users, there are
 * Xuan Cui
 * Matthew Liu
 
-## License
-
-This project is licensed under the MIT License. 
